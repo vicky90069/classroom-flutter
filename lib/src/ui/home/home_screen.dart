@@ -36,9 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
           AppBloc.doExamBloc
               .add(JoinQuizEvent(roomId: input.toString().trim()));
         },
-        title: 'Nhập mã PIN',
-        buttonTitle: 'Vào phòng',
-        hideInputField: 'Nhập mã PIN để vào phòng kiểm tra ngay...',
+        title: 'Enter PIN code',
+        buttonTitle: 'Enter room',
+        hideInputField: 'Enter PIN to enter the room and check now...',
       ),
     );
   }

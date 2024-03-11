@@ -63,15 +63,7 @@ class _AppState extends State<App> {
                       },
                       home: BlocBuilder<ApplicationBloc, ApplicationState>(
                         builder: (context, application) {
-                          if (application is ApplicationCompleted) {
-                            if (auth is AuthenticationFail) {
-                              return AuthenticateScreen();
-                            }
-                            if (auth is AuthenticationSuccess) {
                               return Navigation();
-                            }
-                          }
-                          return SplashScreen();
                         },
                       ),
                     ),

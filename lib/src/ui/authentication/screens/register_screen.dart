@@ -51,7 +51,7 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
         ),
         title: Text(
-          'Bắt đầu là thành viên',
+          'Become a member',
           style: TextStyle(
             fontSize: 15.sp,
             fontFamily: FontFamily.lato,
@@ -89,29 +89,29 @@ class _RegisterPageState extends State<RegisterPage> {
                               SizedBox(height: 12.0),
                               _buildLineInfo(
                                 context,
-                                'Họ của bạn',
-                                'Hãy nhập họ của bạn',
+                                'Your first name',
+                                'Please enter your first name',
                                 _firstNameController,
                               ),
                               _buildDivider(context),
                               _buildLineInfo(
                                 context,
-                                'Tên của bạn',
-                                'Hãy nhập tên của bạn',
+                                'Your last name',
+                                'Please enter your last name',
                                 _lastNameController,
                               ),
                               _buildDivider(context),
                               _buildLineInfo(
                                 context,
                                 'Email',
-                                'Hãy nhập email của bạn',
+                                'Please enter your email',
                                 _emailController,
                               ),
                               _buildDivider(context),
                               _buildLineInfo(
                                 context,
-                                'Mật khẩu',
-                                'Mật khẩu phải có tối thiểu 6 kí tự',
+                                'Password',
+                                'Password must be at least 6 characters',
                                 _passwordController,
                               ),
                               _buildDivider(context),
@@ -131,7 +131,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     fontWeight: FontWeight.w500,
                                   ),
                                   validator: (val) =>
-                                      val!.trim() != password ? 'Mật khẩu không khớp' : null,
+                                  val!.trim() != password ? 'Passwords do not match' : null,
                                   obscureText: hidePassword,
                                   decoration: InputDecoration(
                                     floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -139,7 +139,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                       left: 12.0,
                                     ),
                                     border: InputBorder.none,
-                                    labelText: 'Nhập lại mật khẩu',
+                                    labelText: 'Confirm Password',
                                     labelStyle: TextStyle(
                                       color: Theme.of(context)
                                           .textTheme
@@ -183,7 +183,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             ),
                             child: Center(
                               child: Text(
-                                'Đăng kí ngay',
+                                'Register now',
                                 style: TextStyle(
                                   color: mC,
                                   fontSize: 10.sp,
@@ -221,7 +221,7 @@ class _RegisterPageState extends State<RegisterPage> {
         validator: (val) {
           if (title == 'Email') {
             return !GetUtils.isEmail(val!) ? valid : null;
-          } else if (title == 'Mật khẩu') {
+          } else if (title == 'Password') {
             return val!.length < 6 ? valid : null;
           } else {
             return val!.length == 0 ? valid : null;
@@ -229,23 +229,23 @@ class _RegisterPageState extends State<RegisterPage> {
         },
         onChanged: (val) {
           setState(() {
-            if (title == 'Họ của bạn') {
+            if (title == 'Your first name') {
               firstName = val.trim();
-            } else if (title == 'Tên của bạn') {
+            } else if (title == 'Your last name') {
               lastName = val.trim();
             } else if (title == 'Email') {
               email = val.trim();
-            } else if (title == 'Mật khẩu') {
+            } else if (title == 'Password') {
               password = val.trim();
             } else {}
           });
         },
         inputFormatters: [
-          title == 'Số điện thoại'
+          title == 'Phone number'
               ? FilteringTextInputFormatter.digitsOnly
               : FilteringTextInputFormatter.singleLineFormatter,
         ],
-        obscureText: title == 'Mật khẩu' ? true : false,
+        obscureText: title == 'Password' ? true : false,
         decoration: InputDecoration(
           floatingLabelBehavior: FloatingLabelBehavior.always,
           contentPadding: EdgeInsets.only(

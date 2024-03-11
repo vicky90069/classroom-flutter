@@ -88,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                                       _buildLineInfo(
                                         context,
                                         'Email',
-                                        'Hãy nhập email của bạn',
+                                        'Please enter your email',
                                         usernameFocus,
                                       ),
                                       Divider(
@@ -99,8 +99,8 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                       _buildLineInfo(
                                         context,
-                                        'Mật khẩu',
-                                        'Mật khẩu phải có tối thiểu 6 kí tự',
+                                        'Password',
+                                        'Password must be at least 6 characters',
                                         passwordFocus,
                                       ),
                                     ],
@@ -126,10 +126,10 @@ class _LoginPageState extends State<LoginPage> {
                                         ),
                                         children: [
                                           TextSpan(
-                                            text: 'Bạn chưa có tài khoản? ',
+                                            text: 'Don\'t have an account? ',
                                           ),
                                           TextSpan(
-                                            text: 'Đăng kí ngay',
+                                            text: 'Register now',
                                             style: TextStyle(
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -161,7 +161,7 @@ class _LoginPageState extends State<LoginPage> {
                                     ),
                                     child: Center(
                                       child: Text(
-                                        'Đăng nhập',
+                                        'Login',
                                         style: TextStyle(
                                           color: mC,
                                           fontSize: 10.sp,
@@ -242,7 +242,7 @@ class _LoginPageState extends State<LoginPage> {
             password = val.trim();
           }
         },
-        obscureText: title == 'Mật khẩu' ? hidePassword : false,
+        obscureText: title == 'Password' ? hidePassword : false,
         decoration: InputDecoration(
           floatingLabelBehavior: FloatingLabelBehavior.always,
           contentPadding: EdgeInsets.only(
@@ -255,19 +255,19 @@ class _LoginPageState extends State<LoginPage> {
             fontSize: 11.sp,
             fontWeight: FontWeight.w500,
           ),
-          suffixIcon: title == 'Mật khẩu'
+          suffixIcon: title == 'Password'
               ? IconButton(
-                  onPressed: () {
-                    setState(() {
-                      hidePassword = !hidePassword;
-                    });
-                  },
-                  icon: Icon(
-                    hidePassword ? PhosphorIcons.eyeSlash : PhosphorIcons.eye,
-                    color: colorPrimary,
-                    size: 16.sp,
-                  ),
-                )
+            onPressed: () {
+              setState(() {
+                hidePassword = !hidePassword;
+              });
+            },
+            icon: Icon(
+              hidePassword ? PhosphorIcons.eyeSlash : PhosphorIcons.eye,
+              color: colorPrimary,
+              size: 16.sp,
+            ),
+          )
               : null,
         ),
       ),

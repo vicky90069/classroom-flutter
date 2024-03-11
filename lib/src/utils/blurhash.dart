@@ -213,7 +213,7 @@ class UiImage extends ImageProvider<UiImage> {
 
   @override
   // ignore: deprecated_member_use
-  ImageStreamCompleter load(UiImage key, DecoderCallback decode) =>
+  ImageStreamCompleter load(UiImage key, ImageDecoderCallback decode) =>
       OneFrameImageStreamCompleter(_loadAsync(key));
 
   Future<ImageInfo> _loadAsync(UiImage key) async {
